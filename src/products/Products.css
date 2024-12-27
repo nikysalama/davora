@@ -1,0 +1,16 @@
+.product-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  justify-content: center; /* Centra los productos horizontalmente */
+  width: 100%;
+  box-sizing: border-box;
+  margin-top: 3em;
+}
+
+@media (max-width: 600px){
+  .product-grid{
+    gap: 0;
+    margin: 2em 0 0;
+  }
+}

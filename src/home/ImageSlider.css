@@ -1,0 +1,43 @@
+.slider-container {
+    position: relative;
+    width: 100%;
+    margin: 10px 0px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 6em;
+  }
+  
+  .slider-image {
+    width: auto;
+    height: 300px;
+    display: block;
+  }
+  
+  .prev-button,
+  .next-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: transparent;
+    border: none;
+    color: rgb(77, 71, 66);
+    padding: 60px;
+    cursor: pointer;
+    font-size: 5rem;
+  }
+  
+  .prev-button {
+    left: 0;
+  }
+  
+  .next-button {
+    right: 0;
+  }
+  
+.prev-button:hover,
+.next-button:hover {
+  color: #806137; /* Nuevo color cuando se pasa el mouse */
+}
+  

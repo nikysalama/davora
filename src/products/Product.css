@@ -1,0 +1,136 @@
+.product-card {
+  width: 25%;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  max-width: 250px;
+  margin: 20px;
+  text-align: center;
+  background-color: #fff;
+  box-sizing: border-box;
+
+  position: relative;
+}
+
+@media(max-width: 650px){
+  .product-card{
+    width: 46%;
+    margin: 5px;
+  }
+}
+
+.cart-logo-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.8); /* Fondo blanco con opacidad */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+}
+
+.cart-logo {
+  width: 20%;
+  height: auto;
+}
+
+.product-overlay {
+  position: relative;
+}
+
+.out-of-stock-message {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(255, 255, 255, 0.8);
+  color: #d30b0b;
+  font-size: 24px;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-transform: uppercase;
+}
+
+.product-image {
+  width: auto;
+  height: 200px;
+}
+
+.product-details {
+  padding: 10px;
+}
+
+.product-name {
+  font-size: 15px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  text-transform: uppercase;
+  margin: 10px 0;
+}
+
+.product-price {
+  font-size: 16px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  color: #333;
+}  
+
+.add-to-cart-button {
+  background-color: #f5b25f; /* Color de fondo del botón */
+  color: #fff; /* Color del texto del botón */
+  border: none;
+  padding: 8px 15px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 13px;
+  cursor: pointer;
+  border-radius: 7px;
+  margin-top: 10px;
+  font-weight: 300;
+  text-transform: uppercase;
+}
+
+.add-to-cart-button:hover {
+  background-color: #d39345;
+}
+
+.add-to-cart-button:disabled {
+  background-color: #ccc;
+  cursor: default;
+}
+
+.product-card.out-of-stock.product-image {
+  opacity: 0.5;
+}
+
+.product-card.out-of-stock.out-of-stock-message {
+  display: flex;
+  opacity: 1;
+}
+
+.no-more-stock-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(255, 255, 255, 0.8); /* Fondo blanco translúcido */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2; /* Asegúrate de que esté sobre la imagen */
+}
+
+.no-more-stock-message {
+  color: #d30b0b;
+  font-size: 24px;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin: 0;
+}
+  

@@ -1,0 +1,231 @@
+.compra {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.logo-navbar {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.logo-navbar:hover {
+  cursor: pointer;
+  transform: scale(1.03);
+  opacity: 0.7;
+}
+
+.compra-page {
+  display: flex;
+  justify-content: space-between;
+  padding: 2em;
+}
+
+.left-section {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 50%;
+}
+
+.right-section {
+  width: 45%;
+}
+
+@media (max-width: 800px) {
+  .compra-page {
+    flex-direction: column; /* Cambia a disposición vertical */
+    align-items: center; /* Alinea el contenido al centro */
+  }
+
+  .left-section, .right-section {
+    width: 95%; /* Toma el 100% del ancho del contenedor */
+  }
+
+  .right-section {
+    margin-top: 20px; /* Agrega un margen superior entre las secciones */
+  }
+}
+  
+.compra-logo {
+  width: 150px;
+  height: auto;
+  max-width: 90%;
+  margin: 0;
+}
+
+.email-section {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.email-label {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 5px;
+  font-family:'Montserrat', sans-serif;
+}
+
+.name-label {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 5px;
+  margin-top: 15px;
+  font-family:'Montserrat', sans-serif;
+}
+
+.email-input {
+  padding: 10px;
+  font-size: 16px;
+  width: 100%;
+  max-width: 500px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+.product-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.item-price {
+  margin: 0;
+  text-align: right;
+  font-weight: 500;
+}
+
+.compra-details {
+  display: flex;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  color: #535353;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.item-name-quantity {
+  margin-top: 0;
+}
+
+.title{
+  font-size: 1.5rem;
+  margin-bottom: 0px;
+  margin-top: 0;
+  font-family: 'Montserrat', sans-serif;
+  box-sizing: border-box;
+}
+
+.continuar-button {
+  margin-top: 2%;
+  height: 33px;
+  width: 200px;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-family: 'Montserrat', sans-serif;
+  background-color:#c79f7a ;
+  border: none;
+  cursor: pointer;
+  border-radius: 10px;
+  color:#f5f1ed;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.continuar-button:hover {
+  background-color:#c08650 ;
+}
+
+.continuar-button:active {
+  color: black;
+}
+
+.total-compra{
+  margin-top: auto;
+  text-align: right;
+  font-weight: 700;
+  font-family: 'Montserrat', sans-serif;
+  padding-right: 10px;
+  color: #3b2817;
+}
+
+.email-error {
+  color: red;
+  margin-bottom: 0rem;
+  margin-top: 0.15em;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: small;
+}
+
+.payment-options {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.payment-button {
+  flex: 1;
+  margin: 0 5px;
+  padding: 10px;
+  background-color: #b2b9c0;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  font-family:'Montserrat', sans-serif;
+}
+
+.payment-options :first-child {
+  margin-left: 0;
+}
+
+.payment-button img.payment-icon {
+  width: 24px;
+  height: auto;
+  margin-right: 8px;
+  margin-left: 8px;
+}
+
+.payment-button:hover {
+  background-color: #909397;
+}
+
+.pago-label {
+  font-size: 16px;
+  font-weight: bold;
+  margin-top: 2.3em;
+  font-family:'Montserrat', sans-serif;
+  text-align: left;
+  display: block;
+}
+
+
+.trans-data{
+  font-size: 15px;
+  font-weight: 400;
+  margin-top: 6em;
+  font-family:'Montserrat', sans-serif;
+  text-align: center;
+  display: block;
+}
+
+.trans-confirm-button{
+  padding: 10px;
+  background-color: #c79f7a;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 0.5em;
+  font-family:'Montserrat', sans-serif;
+}
+
+
+.trans-confirmed{
+  width: 100%;
+  max-width: 500px;
+}

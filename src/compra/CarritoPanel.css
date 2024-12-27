@@ -1,0 +1,185 @@
+.carrito-panel {
+  position: fixed;
+  top: 0;
+  right: 0%;
+  width: 300px;
+  height: 100%;
+  background-color: rgb(235, 226, 220);
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+  overflow-y: auto;
+}
+  
+.carrito-panel.show {
+  transform: translateX(0);
+}
+  
+.close-button {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  background: none;
+  border: none;
+  font-size: 1.4rem;
+  cursor: pointer;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  color: #fafafa;
+  text-shadow: 1px 1px 2px rgba(158, 127, 92, 0.7), /* Sombra sutil */
+                -1px -1px 2px rgba(158, 127, 92, 0.7), 
+                1px -1px 2px rgba(158, 127, 92, 0.7), 
+                -1px 1px 2px rgba(158, 127, 92, 0.7); /* Puedes ajustar los valores para cambiar el tamaño y la intensidad del borde */
+}
+  
+.item-image {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  margin-right: 10px;
+}
+  
+.item-details {
+  display: flex;
+  flex-direction: column;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  align-items: flex-start;
+  color: #535353;
+}
+
+.item-details p {
+  margin: 0;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  padding: 5px;
+  border-bottom: 1px solid #b18f70;
+  width: 100%;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.total {
+  margin-top: auto; /* Empuja el total hacia el fondo del panel */
+  text-align: right;
+  font-weight: 500;
+  font-family: 'Montserrat', sans-serif;
+  padding-right: 10px; /* Ajusta el valor según el espacio deseado */
+}
+
+.panel-title {
+  font-size: 1.5rem; /* Ajusta el tamaño de la fuente si es necesario */
+  margin-bottom: 15px; /* Espacio debajo del título */
+  font-family: 'Montserrat', sans-serif;
+}
+
+.quantity-control {
+  display: flex;
+  align-items: center;
+}
+
+.quantity-control button {
+  background-color: #f0f0f0;
+  border: 1px solid #ccc;
+  padding: 0px 10px;
+  cursor: pointer;
+  font-size: 1.5rem;
+  height: 30px;
+}
+
+.quantity-control button:hover{
+  color: #929090;
+}
+
+.quantity-control button:disabled{
+  cursor: default;
+  background-color: #f0f0f0; 
+  color: #a09f9f;
+}
+
+.quantity-control button:disabled:hover{
+  cursor: default;
+}
+
+.quantity-control input {
+  width: 50px;
+  text-align: center;
+  border: 1px solid #ccc;
+  margin: 0;
+  height: 30px;
+  box-sizing: border-box;
+  border-left: none;
+  border-right: none;
+}
+
+.quantity-control input::-webkit-inner-spin-button,
+.quantity-control input::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.quantity-control button:first-of-type {
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+
+.quantity-control button:last-of-type {
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.remove-button {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.remove-button img {
+  width: 20px;
+  height: 20px;
+}
+
+.buy-button {
+  height: 33px;
+  width: 200px;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-family: 'Montserrat', sans-serif;
+  background-color:#eb9f59 ;
+  border: none;
+  cursor: pointer;
+  border-radius: 10px;
+  color:#f5f1ed;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+
+  position: absolute;
+  bottom: 5%; 
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.buy-button:hover {
+  background-color:#cc8645 ;
+}
+
+.items-container {
+  padding-inline-start: 1em;
+  margin-inline-end: 1em;
+}

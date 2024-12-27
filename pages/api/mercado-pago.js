@@ -6,7 +6,9 @@ const client = new MercadoPagoConfig({ accessToken: 'APP_USR-1406847872002743-12
 export default async function handler(req, res) {
   if (req.method === 'POST') {
     try {
-      // Crear la preferencia usando la nueva API
+      res.setHeader('Access-Control-Allow-Origin', '*');  // Permite solicitudes de cualquier origen
+      res.setHeader('Access-Control-Allow-Methods', 'POST');
+
       const preference = new Preference(client);
 
       const response = await preference.create({

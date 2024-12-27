@@ -113,8 +113,8 @@ const CompraPage = () => {
       
             // Llamar al backend para generar el enlace de pago
             const response = await fetch('/api/mercado-pago', {
-              method: "POST",
-              headers: { "Content-Type": "application/json" },
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
               /*body: JSON.stringify({
                 items: products, // Enviar productos al backend
                 email: "comprador@example.com", // Email del comprador

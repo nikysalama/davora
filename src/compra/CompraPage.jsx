@@ -29,9 +29,6 @@ const CompraPage = () => {
     const [errorModalMessage, setErrorModalMessage] = useState('');
     const [showErrorModal, setShowErrorModal] = useState(false);
 
-    // Mercado Pago
-    const [preferenceId, setPreferenceId] = useState(null);
-
     const navigate = useNavigate();
 
     const emailRef = useRef(null);
@@ -106,6 +103,7 @@ const CompraPage = () => {
     }
 
     const handleMercadoPagoPayment = async () => {
+        console.log("se clickeo Mercado Pago");
         try {
             // Datos de ejemplo para los productos
             const products = [
@@ -114,12 +112,17 @@ const CompraPage = () => {
             ];
       
             // Llamar al backend para generar el enlace de pago
-            const response = await fetch("https://us-central1-emine-3b2f0.cloudfunctions.net/createPreference", {
+            const response = await fetch('/api/mercado-pago', {
               method: "POST",
               headers: { "Content-Type": "application/json" },
-              body: JSON.stringify({
+              /*body: JSON.stringify({
                 items: products, // Enviar productos al backend
                 email: "comprador@example.com", // Email del comprador
+              }),*/
+              body: JSON.stringify({
+                title: 'Producto de ejemplo',
+                unit_price: 100,
+                quantity: 1,
               }),
             });
       

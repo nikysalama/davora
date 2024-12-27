@@ -2,7 +2,7 @@ const mercadopago = require('mercadopago');
 
 // Configura el SDK con tu Access Token
 mercadopago.configure({
-  access_token: process.env.MERCADO_PAGO_ACCESS_TOKEN,
+  access_token: 'APP_USR-1406847872002743-121821-250086ca1c29da9c3dfc6b28e387745f-1365029203',
 });
 
 export default async function handler(req, res) {

@@ -30,9 +30,9 @@ export default async function handler(req, res) {
             installments: 1,
           },
           back_urls: {
-            success: 'https://davora.vercel.app/success',
-            failure: 'https://davora.vercel.app/failure',
-            pending: 'https://davora.vercel.app/pending',
+            success: 'https://es-la.facebook.com/login/device-based/regular/login/',
+            failure: 'https://es-la.facebook.com',
+            pending: 'https://www.instagram.com',
           },
           auto_return: 'approved',
         }

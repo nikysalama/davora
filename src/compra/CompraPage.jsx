@@ -110,21 +110,25 @@ const CompraPage = () => {
               { title: "Producto 1", quantity: 1, unit_price: 100 },
               { title: "Producto 2", quantity: 2, unit_price: 50 },
             ];
-      
-            // Llamar al backend para generar el enlace de pago
+            
             const response = await fetch('/api/mercado-pago', {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({
+                  title: 'Producto de ejemplo',
+                  unit_price: 100,
+                  quantity: 1,
+                }),
+            });              
+            // Llamar al backend para generar el enlace de pago
+            /*const response = await fetch('/api/mercado-pago', {
               method: 'POST',
               headers: { 'Content-Type': 'application/json' },
-              /*body: JSON.stringify({
+              body: JSON.stringify({
                 items: products, // Enviar productos al backend
                 email: "comprador@example.com", // Email del comprador
-              }),*/
-              body: JSON.stringify({
-                title: 'Producto de ejemplo',
-                unit_price: 100,
-                quantity: 1,
               }),
-            });
+            });*/
       
             if (!response.ok) {
               throw new Error("Error al crear la preferencia");

@@ -4,6 +4,8 @@ import { MercadoPagoConfig, Preference } from 'mercadopago';
 const client = new MercadoPagoConfig({ accessToken: 'APP_USR-1406847872002743-121821-250086ca1c29da9c3dfc6b28e387745f-1365029203'});
 
 export default async function handler(req, res) {
+  console.log(`HTTP Method: ${req.method}`);
+
   if (req.method === 'POST') {
     try {
       console.log(`title: ${req.body.title}, quanitity: ${req.body.quantity}, unit_price: ${req.body.unit_price}`);

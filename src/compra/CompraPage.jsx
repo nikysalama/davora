@@ -40,7 +40,7 @@ const CompraPage = () => {
     const total = cartItems.reduce((acc, item) => acc + item.price * item.quantity, 0);
 
     useEffect(() => {
-        const fetchPreferenceId = async () => {
+        /*const fetchPreferenceId = async () => {
             try {
                 const items = cartItems.map(item => ({
                     title: item.name,
@@ -72,8 +72,13 @@ const CompraPage = () => {
             }
         };
 
-        if (cartItems.length > 0) fetchPreferenceId();
-    }, [cartItems]);
+        if (cartItems.length > 0) fetchPreferenceId();*/
+        fetch('/api/test', { method: 'GET' })
+            .then(response => response.json())
+            .then(data => console.log(data))
+            .catch(error => console.error(error));
+
+    }, []);
 
     const handleContinue = () => {
         const email = emailRef.current.value;

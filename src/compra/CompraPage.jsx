@@ -40,9 +40,14 @@ const CompraPage = () => {
     const total = cartItems.reduce((acc, item) => acc + item.price * item.quantity, 0);
 
     useEffect(() => {
-        // Llama al backend para obtener el preferenceId
         const fetchPreferenceId = async () => {
             try {
+                const items = cartItems.map(item => ({
+                    title: item.name,
+                    unit_price: item.price,
+                    quantity: item.quantity,
+                }));
+
                 const response = await fetch('/api/mercado-pago', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
@@ -60,18 +65,13 @@ const CompraPage = () => {
                 const data = await response.json();
                 setPreferenceId(data.preferenceId);  // Guarda el preferenceId del backend
             } catch (error) {
-                console.error('Error al crear la preferencia:', error);
-                alert('Hubo un problema al iniciar el pago. Inténtalo nuevamente.');
+                console.error('Error al obtener el preferenceId:', error);
+                alert('No se pudo iniciar el pago. Intente nuevamente.');
             }
         };
 
-        fetchPreferenceId();
-    }, []);
-
-    useEffect(() => {
-        // Inicializa el SDK de Mercado Pago con tu clave pública
-        initMercadoPago('APP_USR-ad84ba5a-63fe-446b-a8cf-173c0f8b2187', { locale: 'es-AR' });
-    }, []);
+        if (cartItems.length > 0) fetchPreferenceId();
+    }, [cartItems]);
 
     const handleContinue = () => {
         const email = emailRef.current.value;
@@ -137,49 +137,6 @@ const CompraPage = () => {
         setShowPaymentOptions(true);
         setTransData(false);
     }
-
-    const handleMercadoPagoPayment = async () => {
-        console.log("se clickeo Mercado Pago");
-        try {
-            // Datos de ejemplo para los productos
-            const products = [
-                { title: "Producto 1", quantity: 1, unit_price: 100 },
-                { title: "Producto 2", quantity: 2, unit_price: 50 },
-            ];
-
-            const response = await fetch('/api/mercado-pago', {
-                method: "POST",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({
-                    title: 'Producto de ejemplo',
-                    unit_price: 100,
-                    quantity: 1,
-                }),
-            });
-            // Llamar al backend para generar el enlace de pago
-            /*const response = await fetch('/api/mercado-pago', {
-              method: 'POST',
-              headers: { 'Content-Type': 'application/json' },
-              body: JSON.stringify({
-                items: products, // Enviar productos al backend
-                email: "comprador@example.com", // Email del comprador
-              }),
-            });*/
-
-            if (!response.ok) {
-                throw new Error("Error al crear la preferencia");
-            }
-
-            const data = await response.json();
-            setPreferenceId(data.preferenceId); 
-
-            // Redirigir al usuario al flujo de pago de Mercado Pago
-            window.location.href = data.init_point; // Redirige automáticamente al flujo de pago
-        } catch (error) {
-            console.error("Error al iniciar el pago:", error);
-            alert("Hubo un problema al iniciar el pago. Inténtalo nuevamente.");
-        }
-    };
 
     return (
         <div className='compra'>

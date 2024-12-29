@@ -1,15 +1,15 @@
 import { MercadoPagoConfig, Preference } from 'mercadopago';
 
 // Configura el SDK con tu Access Token
-const client = new MercadoPagoConfig({ accessToken: 'APP_USR-1406847872002743-121821-250086ca1c29da9c3dfc6b28e387745f-1365029203' });
+const client = new MercadoPagoConfig({ accessToken: 'APP_USR-1406847872002743-121821-250086ca1c29da9c3dfc6b28e387745f-1365029203'});
 
 export default async function handler(req, res) {
   if (req.method === 'POST') {
     try {
       console.log(`title: ${req.body.title}, quanitity: ${req.body.quantity}, unit_price: ${req.body.unit_price}`);
       
-      res.setHeader('Access-Control-Allow-Origin', '*');  // Permite solicitudes de cualquier origen
-      res.setHeader('Access-Control-Allow-Methods', 'POST');
+      /*res.setHeader('Access-Control-Allow-Origin', '*');  // Permite solicitudes de cualquier origen
+      res.setHeader('Access-Control-Allow-Methods', 'POST');*/
 
       const preference = new Preference(client);
 
@@ -43,7 +43,7 @@ export default async function handler(req, res) {
       });
 
       // Retorna la URL de pago generada
-      res.status(200).json({ init_point: response.body.init_point });
+      res.status(200).json({ preferenceId:response.body.id, init_point: response.body.init_point });
     } catch (error) {
       console.error('Error creando la preferencia:', error);
       res.status(500).json({ error: 'Error al crear la preferencia' });

@@ -171,6 +171,7 @@ const CompraPage = () => {
             }
 
             const data = await response.json();
+            setPreferenceId(data.preferenceId); 
 
             // Redirigir al usuario al flujo de pago de Mercado Pago
             window.location.href = data.init_point; // Redirige automáticamente al flujo de pago

@@ -6,12 +6,12 @@ const client = new MercadoPagoConfig({ accessToken: 'APP_USR-1406847872002743-12
 export default async function handler(req, res) {
   if (req.method === 'POST') {
     try {
+      console.log(`title: ${req.body.title}, quanitity: ${req.body.quantity}, unit_price: ${req.body.unit_price}`);
+      
       res.setHeader('Access-Control-Allow-Origin', '*');  // Permite solicitudes de cualquier origen
       res.setHeader('Access-Control-Allow-Methods', 'POST');
 
       const preference = new Preference(client);
-
-      console.log(`title: ${req.body.title}, quanitity: ${req.body.quantity}, unit_price: ${req.body.unit_price}`);
 
       const response = await preference.create({
         body: {

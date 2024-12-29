@@ -11,6 +11,8 @@ export default async function handler(req, res) {
 
       const preference = new Preference(client);
 
+      console.log(`title: ${req.body.title}, quanitity: ${req.body.quantity}, unit_price: ${req.body.unit_price}`);
+
       const response = await preference.create({
         body: {
           items: [

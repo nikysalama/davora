@@ -49,7 +49,7 @@ export default async function handler(req, res) {
       res.status(500).json({ error: 'Error al crear la preferencia' });
     }
   } else {
-    console.log(`mathod: ${req.method}, title: ${req.body.title}, quanitity: ${req.body.quantity}, unit_price: ${req.body.unit_price}`);
+    console.log(`method: ${req.method}, title: ${req.body.title}, quanitity: ${req.body.quantity}, unit_price: ${req.body.unit_price}`);
     res.setHeader('Allow', ['POST']);
     res.status(405).end(`Method ${req.method} Not Allowed`);
   }

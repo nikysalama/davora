@@ -48,6 +48,8 @@ const CompraPage = () => {
                     quantity: item.quantity,
                 }));
 
+                console.log("queti");
+
                 const response = await fetch('/api/mercado-pago', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
